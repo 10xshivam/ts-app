@@ -5,7 +5,7 @@ function init(){
     try {
         const PORT = process.env.PORT || 8000
         const server = http.createServer(app)
-        server.listen(PORT,()=>{
+        server.listen(PORT, () => {
             console.log(`Http server is listening on PORT ${PORT}`)
         })
     } catch (error) {
