@@ -2,6 +2,13 @@ name: e-commerce
 
 #what services u need in this docker compose
 services:
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8000:8000"
   db:
     image: postgres:16
     container_name: postgres
