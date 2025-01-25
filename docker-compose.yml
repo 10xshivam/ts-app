@@ -1,0 +1,22 @@
+name: e-commerce
+
+#what services u need in this docker compose
+services:
+  db:
+    image: postgres:16
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5431:5432"  
+  redis:
+    image: redis:7-alpine
+    depends_on:
+      - db
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+# docker run -it --name:postgres -e POSTGRES_PASSWORD=1234  postgres
